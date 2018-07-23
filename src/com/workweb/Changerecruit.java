@@ -53,7 +53,7 @@ public class Changerecruit extends HttpServlet {
             }
             else{
                 out.println("<script language = javascript>alert('修改失败');");
-                out.println("location.href='change.jsp'</script>");
+                out.println("location.href='more.jsp'</script>");
             }
             //Jdbcconn.getInstance().close();
         //}catch (SQLException e){

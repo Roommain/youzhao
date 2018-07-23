@@ -101,7 +101,6 @@
           %>
         </ul>
 
-
         <a class="pull-right" href="more.jsp">更多>></a>
       </div>
       <div class="time">
@@ -136,34 +135,6 @@
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/style.js"></script>
 <script type="text/javascript" src="js/jquery.cookie.js"></script>
-<script type="text/javascript">
-
-    $(function () {
-        var username=$.cookie('username');
-        var cookie1=$.cookie('cookie1');
-        console.log(username);
-        if(username == null){
-            $('#hide').hide();
-            $('#show').show();
-            $('#show a').html("请登录");
-        }
-        else {
-            $('#hide').hide();
-            $('#show').show();
-            $('#cos').show();
-            $('#show a').html(username+",欢迎你");
-        }
-
-        $("#cos").click(function () {
-            $.cookie('username', { expires: 0 });
-            $('#hide').hide();
-            $('#show').show();
-            $('#cos').hide();
-            $('#show a').html("请登录");
-        });
-    })
-
-
-</script>
+<script type="text/javascript" src="js/cookie.js"></script>
 </body>
 </html>

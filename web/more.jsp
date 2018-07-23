@@ -30,9 +30,9 @@
 <div class="meun-box">
     <div class="main-width">
         <a class="a" href="index.jsp">首页</a>
-        <a class="a" href="#">企业招聘信息</a>
+        <a class="a" href="more.jsp">企业招聘信息</a>
         <a class="a" href="#">个人求职信息</a>
-        <a class="a" href="#">修改企业招聘信息</a>
+        <a class="a" href="change.jsp">修改企业招聘信息</a>
     </div>
 </div>
 <div class="fc">
@@ -74,6 +74,9 @@
                         String systemtime = rs.getString("systemtime");
                         String treatment = rs.getString("treatment");
                         String interviewdate = rs.getString("interviewdate");
+                        String[] arr = interviewdate.split(" ");
+                        String inter = arr[0];
+
                         String phone = rs.getString("phone");
                         String enddate = rs.getString("enddate");
                         String workplace = rs.getString("workplace");
@@ -85,7 +88,7 @@
                 <tr>
                     <td><%=companyname%></td>
                     <td><%=describe%></td>
-                    <td><%=interviewdate%></td>
+                    <td><%=inter%></td>
                     <td><%=workplace%></td>
                     <td><%=phone%></td>
                     <td><%=systemtime%></td>

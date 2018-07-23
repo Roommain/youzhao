@@ -34,8 +34,13 @@
         String systemtime = rs.getString("systemtime");
         String treatment = rs.getString("treatment");
         String interviewdate = rs.getString("interviewdate");
+        String[] arr = interviewdate.split(" ");
+        String inter = arr[0];
         String phone = rs.getString("phone");
         String enddate = rs.getString("enddate");
+        String[] arr2 = interviewdate.split(" ");
+        String inter2 = arr[0];
+
         String workplace = rs.getString("workplace");
         String username = rs.getString("username");
         String publisher = rs.getString("publisher");
@@ -75,7 +80,7 @@
                     <ul>
                         <li>
                             <div>面试时间：</div>
-                            <input type="date" name="interviewdate" value="<%=interviewdate%>">
+                            <input type="text" name="interviewdate" value="<%=inter%>">
                         </li>
                         <li>
                             <div>面试地点：</div>
@@ -87,7 +92,7 @@
                         </li>
                         <li>
                             <div>截至日期：</div>
-                            <input type="date" name="enddate" value="<%=enddate%>">
+                            <input type="text" name="enddate" value="<%=inter2%>">
                         </li>
                         <li>
                             <div>工作地点：</div>
@@ -111,5 +116,6 @@
 %>
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
 </body>
 </html>
