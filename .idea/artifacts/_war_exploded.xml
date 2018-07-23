@@ -1,0 +1,18 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="邮招聘:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/_war_exploded</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="邮招聘" />
+          <element id="library" level="project" name="ojdbc6" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="ojdbc6" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/ojdbc6.jar" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="邮招聘/web/Web" />
+    </root>
+  </artifact>
+</component>

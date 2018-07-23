@@ -1,0 +1,404 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
+ul{padding:0px; margin:0px;}
+html,body{
+    width: 100%;
+    height: 100%;
+}
+.clearFix:after {
+    content: '';
+    display: block;
+    height: 0;
+    line-height: 0;
+    visibility: hidden;
+    clear: both;
+}
+li {
+    list-style-type: none;
+}
+#head{
+    position: relative;
+    width: 100%;
+    height: 90px;
+    background: rgb(54,140,114) url("../images/nav_bg.png")no-repeat;
+
+}
+#head .container .search{
+    position: relative;
+    width: 260px;
+    height: 34px;
+    border: 1px;
+}
+#head .container p{
+    position: absolute;
+    top: 0px;
+    left: 40%;
+    margin-top: 30px;
+    font-size: 30px;
+    color: #ccc;
+}
+#head .container .aa{
+    position: absolute;
+    top: 0px;
+    right: 80px;
+    margin-top: 30px;
+}
+#head .container .sign{
+    height: 34px;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 5px;
+}
+#head .container .sign a{
+    color: white;
+}
+#head .container .sign a:hover{
+    color: #FF6600;
+}
+#head .container .sign a{
+    font-size: 16px;
+    text-decoration: none;
+}
+#head .container .search input{
+    width: 190px;
+    height: 34px;
+    opacity: 0.8;
+}
+#head .container .btn1{
+    position: absolute;
+    left: 180px;
+    top: -4px;
+    border:0px;
+    outline:none;
+    cursor: pointer;
+    width: 59px;
+    height: 40px;
+    background: url(../images/searchbtn.png) center no-repeat;
+    opacity: 0.8;
+}
+
+
+#box{
+    overflow: hidden;
+    position: relative;
+    min-width: 100%;
+    height: 450px;
+    margin: 0 auto;
+}
+#img ul li{
+    width: 100%;
+    opacity: 0;
+    transition: 2s;
+}
+#box ul li img{
+    position: absolute;
+    min-width: 860px;
+    height: 450px;
+}
+#box ul li.on{
+    z-index: 1;
+    opacity: 1;
+}
+#tlt{
+    position: absolute;
+    z-index: 2;
+    left: 50%;
+    bottom: 10px;
+    width: 120px;
+    height: 14px;
+    margin-left: -40px;
+}
+#tlt ul li{
+    float: left;
+    width: 14px;
+    height: 14px;
+    border-radius: 100%;
+    background-color: #F60;
+    margin:0 3px;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: 2s;
+}
+#tlt ul li.on{
+    opacity: 1;
+}
+
+.p{
+    opacity: 0;
+    position: absolute;
+    top:50%;
+    left: 20px;
+    margin-top: -25px;
+    width: 50px;
+    height: 50px;
+    background: url(../images/leftbtn.png) no-repeat 0 0px;
+    transition: 2s;
+}
+.n{
+    opacity: 0;
+    position: absolute;
+    top:50%;
+    right: 20px;
+    margin-top: -25px;
+    width: 50px;
+    height: 50px;
+    background: url(../images/rightbtn.png) no-repeat 0 0px;
+    transition: 2s;
+}
+#box:hover .p{
+    opacity: 1;
+}
+#box:hover .n{
+    opacity: 1;
+}
+#information .in_1{
+    position: relative;
+    top:-50px;
+    width: 100%;
+    height: 300px;
+
+}
+#information .in_1 .login_search{
+    opacity: 0.8;
+    width: 100%;
+    height: 50px;
+}
+#information .in_1 .login_search .service{
+    width: 250px;
+    height: 45px;
+    float: right;
+    display: block;
+    line-height: 45px;
+    font-size: 28px;
+    border-radius: 5px;
+    background-color: #14794f;
+    text-align: center;
+    color: white;
+}
+#information .in_1 .login_search ul li{
+    width: 100px;
+    height: 45px;
+    float: left;
+    display: block;
+    line-height: 45px;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 5px;
+    padding-left: 40px;
+    background-position: 10px 12px;
+    background-repeat: no-repeat;
+    margin-right: 5px;
+    transition: 1s;
+
+}
+#information .in_1 .login_search ul li a{
+    text-decoration: none;
+    color: white;
+}
+
+#information .in_1 .login_search ul li a:hover{
+    font-size: 16px;
+}
+#information .in_1 .login_search .bg1{
+    background-image: url(../images/ico6.png);
+    color: #FF6600;
+    background-color: #14794f;
+}
+#information .in_1 .login_search .bg2{
+    background-image: url(../images/ico6.png);
+    background-color: #278bba;
+}
+#information .in_1 .login_search .bg3{
+    background-image: url(../images/ico6.png);
+    background-color: #ffe270;
+}
+#information .in_1 .login_search .bg4{
+    background-image: url(../images/ico6.png);
+    background-color: #0caf92;
+}
+#information .in_1 .login_search .bg5{
+    background-image: url(../images/ico6.png);
+    background-color: #979797;
+}
+
+
+#information .in_1 .link{
+    width: 306px;
+    height: 264px;
+    margin-top: 5px;
+    float: left;
+    background-color: #FF6600;
+}
+#information .in_1 .link li{
+    float: left;
+}
+#information .in_1 .link li a{
+    overflow: hidden;
+    color: #fff;
+    font-size: 16px;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    transition: 1s;
+}
+#information .in_1 .link li a:hover{
+    font-size: 20px;
+}
+#information .in_1 .link .link1{
+    background: url(../images/ico1.png) no-repeat center 30px #4cb976;
+    width: 204px;
+    height: 132px;
+    text-align: center;
+    line-height: 172px;
+}
+#information .in_1 .link .link2{
+    background: url(../images/ico2.png) no-repeat center 30px #9d9d9d;
+    width: 102px;
+    height: 132px;
+    line-height: 172px;
+}
+#information .in_1 .link .link3{
+    background: url(../images/ico3.png) no-repeat center 30px #dfca7b;
+    width: 102px;
+    height: 132px;
+    line-height: 172px;
+}
+#information .in_1 .link .link4{
+    background: url(../images/ico4.png) no-repeat center 30px #88938f;
+    width: 102px;
+    height: 132px;
+    line-height: 172px;
+}
+#information .in_1 .link .link5{
+    background: url(../images/ico5.png) no-repeat center 30px #4cb976;
+    width: 102px;
+    height: 132px;
+    line-height: 172px;
+}
+
+
+#information .in_1 .new{
+    width: 540px;
+    height: 264px;
+    margin-top: 5px;
+    float: left;
+    margin-left: 20px;
+}
+#information .in_1 .new ul li{
+    width: 100%;
+    height: 20px;
+    margin: 10px;
+    font-size: 16px;
+    padding: 5px;
+}
+#information .in_1 .new ul li .new_l{
+    width: 80%;
+    float: left;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+#information .in_1 .new ul li .new_r{
+    width: 20%;
+    float: right;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+#information .in_1 .time{
+    width: 250px;
+    height: 264px;
+    float: right;
+    margin-top: 5px;
+}
+#information .in_1 .time ul li{
+    width: 100px;
+    height: 100px;
+    float: left;
+    margin: 10px;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 10px;
+    position: relative;
+}
+#information .in_1 .time ul li a{
+    text-decoration: none;
+    font-size: 16px;
+    color: #5a5a5a;
+}
+#information .in_1 .time i{
+    display: block;
+    width: 68px;
+    height: 68px;
+    margin: 0 0 0 10px;
+}
+#information .in_1 .time ul li:hover{
+    top: -5px;
+}
+#information .in_1 .time .time1 i{
+
+    background: url("../images/ic2.png") ;
+    background-position: 6px 9px;
+}
+#information .in_1 .time .time2 i{
+    background: url("../images/ic1.png") ;
+    background-position: 323px 290px;
+}
+#information .in_1 .time .time3 i{
+    background: url("../images/ic1.png") ;
+    background-position: 316px 230px;
+}
+#information .in_1 .time .time4 i{
+    background: url("../images/ic1.png") ;
+    background-position: 264px 290px;
+}
+
+
+
+#cooperation{
+    width: 100%;
+    height: 150px;
+}
+#cooperation .coo_1{
+    width: 200px;
+    height: 40px;
+    position: relative;
+    top:-40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 20px;
+}
+#cooperation .coo_2{
+    width: 100%;
+    height: 90px;
+    overflow: hidden;
+}
+#cooperation .coo_2 .tu{
+    width: 200%;
+    height: 100%;
+}
+#cooperation .coo_2 ul li{
+
+    float: left;
+}
+#cooperation .coo_2 ul li img{
+    width: 180px;
+    height:90px;
+}
+
+#head #cos{
+    position: absolute;
+    top: 34px;
+    right: 0px;
+}
+
+
+
+
+
+
+
