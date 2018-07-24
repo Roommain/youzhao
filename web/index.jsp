@@ -2,6 +2,9 @@
 <%@ page import="java.sql.SQLException" %>
 <%@ page import="java.sql.DriverManager" %>
 <%@ page import="com.workweb.Jdbcconn" %>
+<%@ page import="com.workweb.RecruitDao" %>
+<%@ page import="com.workweb.Recruit" %>
+<%@ page import="java.util.List" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <jsp:useBean id="connection" scope="page" class="com.workweb.Jdbcconn" />
@@ -18,7 +21,6 @@
   <link rel="stylesheet" href="css/style.css">
   <title>邮招聘信息发布平台</title>
 </head>
-<%! ResultSet rs = null, goodrs = null;%>
 <body>
 <div id="head">
   <div class="container clearFix">
@@ -83,19 +85,18 @@
       </ul>
       <div class="new">
         <ul class="clearFix">
-
           <%
-            String goodsql = "select id,companyname,describe,requirement,place, systemtime from CQUPT_RECRUIT order by id desc";
-            rs = Jdbcconn.getInstance().executeQuery(goodsql);
-            while(rs.next()) {
-              int id = rs.getInt("id");
-              String companyname = rs.getString("companyname");
-              String describe = rs.getString("describe");
-              String requirement = rs.getString("requirement");
-              String place = rs.getString("place");
-              String systemtime = rs.getString("systemtime");
+            try {
+              List<Recruit> list = RecruitDao.getInstance().selectAllDesc();
+              for (Recruit e : list) {
           %>
-          <li><a href=""><span class="new_l"><%=companyname+"招"+describe+"工作"+requirement+"面试地点"+place%></span><span class="new_r"><%=systemtime%></span></a></li>
+          <li><a href=""><span class="new_l"><%=e.getCompanyName()+"招"+e.getDescribe()+"工作"+e.getRequirement()+"面试地点"+e.getPlace()%></span><span class="new_r"><%=e.getSystemTime()%></span></a></li>
+          <%
+            }
+          } catch (SQLException e) {
+            e.printStackTrace();
+          %>
+
           <%
             }
           %>

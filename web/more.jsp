@@ -2,6 +2,9 @@
 <%@ page import="java.sql.SQLException" %>
 <%@ page import="java.sql.DriverManager" %>
 <%@ page import="com.workweb.Jdbcconn" %>
+<%@ page import="com.workweb.RecruitDao" %>
+<%@ page import="com.workweb.Recruit" %>
+<%@ page import="java.util.List" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <jsp:useBean id="connection" scope="page" class="com.workweb.Jdbcconn" />
@@ -17,9 +20,9 @@
     <link href="images/icon.png" rel="shortcut icon" />
     <link href="https://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/MoreInfomation.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>更多信息</title>
 </head>
-<%! ResultSet rs = null;%>
 <body>
 <div id="head">
     <div class="container clearFix">
@@ -32,7 +35,7 @@
         <a class="a" href="index.jsp">首页</a>
         <a class="a" href="more.jsp">企业招聘信息</a>
         <a class="a" href="#">个人求职信息</a>
-        <a class="a" href="change.jsp">修改企业招聘信息</a>
+        <a class="a" href="more.jsp">修改企业招聘信息</a>
     </div>
 </div>
 <div class="fc">
@@ -46,14 +49,14 @@
     <div class="tub_1">
         <div class="tab">
             <table>
-                <tr>
+                <tr style="color: white">
                     <td>招聘公司</td>
                     <td>招聘职位</td>
                     <td>面试时间</td>
                     <td>面试地点</td>
                     <td>联系方式</td>
                     <td>发布时间</td>
-                    <td>查看</td>
+                    <td style="font-size: 14px">修改 <span> 删除</span></td>
                 </tr>
             </table>
         </div>
@@ -62,45 +65,36 @@
         <div class="tab">
             <table>
                 <%
-                    String goodsql = "select id,companyname,treatment,describe,requirement,interviewdate,place,phone,enddate,workplace, username,publisher,systemtime from CQUPT_RECRUIT order by id desc";
-                    rs = Jdbcconn.getInstance().executeQuery(goodsql);
-                    while(rs.next()) {
-                        int id = rs.getInt("id");
-
-                        String companyname = rs.getString("companyname");
-                        String describe = rs.getString("describe");
-                        String requirement = rs.getString("requirement");
-                        String place = rs.getString("place");
-                        String systemtime = rs.getString("systemtime");
-                        String treatment = rs.getString("treatment");
-                        String interviewdate = rs.getString("interviewdate");
-                        String[] arr = interviewdate.split(" ");
-                        String inter = arr[0];
-
-                        String phone = rs.getString("phone");
-                        String enddate = rs.getString("enddate");
-                        String workplace = rs.getString("workplace");
-                        String username = rs.getString("username");
-                        String publisher = rs.getString("publisher");
-                        session.setAttribute("id",id);
+                    try {
+                        List<Recruit> list = RecruitDao.getInstance().selectAllDesc();
+                        for (Recruit e : list) {
                 %>
-
                 <tr>
-                    <td><%=companyname%></td>
-                    <td><%=describe%></td>
-                    <td><%=inter%></td>
-                    <td><%=workplace%></td>
-                    <td><%=phone%></td>
-                    <td><%=systemtime%></td>
-                    <td><a href="change.jsp?id=<%=id%>">查看</a></td>
+                    <td><%=e.getCompanyName()%></td>
+                    <td><%=e.getDescribe()%></td>
+                    <td><%=e.getInter()%></td>
+                    <td><%=e.getWorkplace()%></td>
+                    <td><%=e.getPhone()%></td>
+                    <td><%=e.getSystemTime()%></td>
+                    <td><a href="change.jsp?id=<%=e.getId()%>">修改</a>
+                        <a href="javascript:if(confirm('确实要删除该内容吗?删除后不可恢复。')){location='delete.jsp?id=<%=e.getId()%>'}">删除</a>
+                    </td>
+                </tr>
+                <%
+                        }
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                %>
+                <tr>
+                    <th colspan="7">查询失败，请明天再试。</th>
                 </tr>
                 <%
                     }
-
                 %>
             </table>
         </div>
     </div>
 </div>
+
 </body>
 </html>

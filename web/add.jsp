@@ -35,7 +35,7 @@
                     <ul>
                         <li>
                             <div>公司名称：</div>
-                            <div><input type="text" name="campanyname"></div>
+                            <div><input type="text" name="campanyName"></div>
                         </li>
                         <li>
                             <div>职位福利：</div>
@@ -54,7 +54,7 @@
                     <ul>
                         <li>
                             <div>面试时间：</div>
-                            <input type="date" name="interviewdate">
+                            <input type="date" name="interviewDate">
                         </li>
                         <li>
                             <div>面试地点：</div>
@@ -66,7 +66,7 @@
                         </li>
                         <li>
                             <div>截至日期：</div>
-                            <input type="date" name="enddate">
+                            <input type="date" name="endDate">
                         </li>
                         <li>
                             <div>工作地点：</div>

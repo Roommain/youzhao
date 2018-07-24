@@ -26,26 +26,24 @@
     String goodsql = "select * from CQUPT_RECRUIT where ID="+id;
     rs = Jdbcconn.getInstance().executeQuery(goodsql);
     if(rs.next()) {
-
-        String companyname = rs.getString("companyname");
+        String companyName = rs.getString("companyName");
         String describe = rs.getString("describe");
         String requirement = rs.getString("requirement");
         String place = rs.getString("place");
-        String systemtime = rs.getString("systemtime");
+        String systemTime = rs.getString("systemTime");
         String treatment = rs.getString("treatment");
-        String interviewdate = rs.getString("interviewdate");
-        String[] arr = interviewdate.split(" ");
+        String interviewDate = rs.getString("interviewDate");
+        String[] arr = interviewDate.split(" ");
         String inter = arr[0];
         String phone = rs.getString("phone");
-        String enddate = rs.getString("enddate");
-        String[] arr2 = interviewdate.split(" ");
+        String endDate = rs.getString("endDate");
+        String[] arr2 = interviewDate.split(" ");
         String inter2 = arr[0];
 
         String workplace = rs.getString("workplace");
         String username = rs.getString("username");
         String publisher = rs.getString("publisher");
 %>
-
 <div id="head">
     <div class="container clearFix">
         <div class="pull-left"><img src="images/logo.png" alt=""></div>
@@ -61,7 +59,7 @@
                     <ul>
                         <li>
                             <div>公司名称：</div>
-                            <div><input type="text" name="campanyname" value="<%=companyname%>"></div>
+                            <div><input type="text" name="campanyName" value="<%=companyName%>"></div>
                         </li>
                         <li>
                             <div>职位福利：</div>
@@ -74,13 +72,12 @@
                     <div>任职要求：</div>
                     <p><textarea cols="50" rows="6" style='resize:vertical;' name="requirement"><%=requirement%></textarea>
                     </p>
-
                 </div>
                 <div class="pull-right add-right">
                     <ul>
                         <li>
                             <div>面试时间：</div>
-                            <input type="text" name="interviewdate" value="<%=inter%>">
+                            <input type="text" name="interviewDate" value="<%=inter%>">
                         </li>
                         <li>
                             <div>面试地点：</div>
@@ -92,7 +89,7 @@
                         </li>
                         <li>
                             <div>截至日期：</div>
-                            <input type="text" name="enddate" value="<%=inter2%>">
+                            <input type="text" name="endDate" value="<%=inter2%>">
                         </li>
                         <li>
                             <div>工作地点：</div>
@@ -116,6 +113,5 @@
 %>
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
-
 </body>
 </html>

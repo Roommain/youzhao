@@ -26,14 +26,14 @@ public class Addrecruit extends HttpServlet{
         resp.setCharacterEncoding("UTF-8");
         resp.setContentType("text/html; charset=UTF-8");
         PrintWriter out = resp.getWriter();
-        String campanyname=req.getParameter("campanyname");
+        String campanyname=req.getParameter("campanyName");
         String treatment=req.getParameter("treatment");
         String describe=req.getParameter("describe");
         String requirement=req.getParameter("requirement");
-        String interviewdate=req.getParameter("interviewdate");
+        String interviewdate=req.getParameter("interviewDate");
         String place=req.getParameter("place");
         String phone=req.getParameter("phone");
-        String enddate=req.getParameter("enddate");
+        String enddate=req.getParameter("endDate");
         String workplace=req.getParameter("workplace");
         String publisher=req.getParameter("publisher");
         Cookie[] cookie=req.getCookies();
@@ -55,7 +55,10 @@ public class Addrecruit extends HttpServlet{
                 Statement st = conn.createStatement();
                 String update="insert into cqupt_recruit values(recruit_id.nextval，'"+campanyname+"','"+treatment+"','"+describe+"','"+requirement+
                         "',to_date('"+interviewdate+"','yyyy-mm-dd'),'"+place+"','"+phone+ "',to_date('"+enddate+"','yyyy-mm-dd'),'"+workplace+"','"+username+"','"+publisher+"',sysdate)";
+
+                System.out.print(update);
                 int rs= st.executeUpdate(update);
+
                 if(rs>0){
                     out.println("<script language = javascript>alert('招聘信息发布成功');");
                     out.println("location.href='more.jsp'</script>");

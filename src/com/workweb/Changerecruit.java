@@ -20,14 +20,14 @@ public class Changerecruit extends HttpServlet {
         resp.setCharacterEncoding("UTF-8");
         resp.setContentType("text/html; charset=UTF-8");
         PrintWriter out = resp.getWriter();
-        String campanyname=req.getParameter("campanyname");
+        String campanyname=req.getParameter("campanyName");
         String treatment=req.getParameter("treatment");
         String describe=req.getParameter("describe");
         String requirement=req.getParameter("requirement");
-        String interviewdate=req.getParameter("interviewdate");
+        String interviewdate=req.getParameter("interviewDate");
         String place=req.getParameter("place");
         String phone=req.getParameter("phone");
-        String enddate=req.getParameter("enddate");
+        String enddate=req.getParameter("endDate");
         String workplace=req.getParameter("workplace");
         String publisher=req.getParameter("publisher");
         String id = req.getParameter("id");
@@ -42,7 +42,7 @@ public class Changerecruit extends HttpServlet {
                 }
             }
             String UPDATE="update cqupt_recruit set companyname='"+campanyname+"',treatment='"+treatment+"',describe='"+describe+"',requirement='"+requirement+"',interviewdate=to_date('"+interviewdate+"','yyyy-mm-dd')," +
-                    "place='"+place+"',phone='"+phone+"',enddate=to_date('"+enddate+"','yyyy/mm/dd'),workplace='"+workplace+"',username='"+username+"',publisher='"+publisher+"',systemtime=sysdate where id="+id;
+                    "place='"+place+"',phone='"+phone+"',enddate=to_date('"+enddate+"','yyyy-mm-dd'),workplace='"+workplace+"',username='"+username+"',publisher='"+publisher+"',systemtime=sysdate where id="+id;
             System.out.println(UPDATE);
 
             System.out.print(id);
