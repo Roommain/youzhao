@@ -29,3 +29,6 @@
     height: 45px;
     background-color: #0caf92;
 }
+#add .Release ul li span{
+    color: red;
+}

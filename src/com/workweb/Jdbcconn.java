@@ -31,6 +31,11 @@ public class Jdbcconn {
             System.out.println("数据库加载失败");
         }
     }
+
+    public Connection getConn() {
+        return conn;
+    }
+
     public ResultSet executeQuery(String sql) {
         try {
             st = conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE,

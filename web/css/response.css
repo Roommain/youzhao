@@ -1,0 +1,21 @@
+/*@charset 'utf-8';*/
+/* 当它的宽度缩小到990的时候，出现新的样式 */
+@media screen and ( max-width:800px ){
+    #head .container .search{
+        display: none;
+    }
+    #head .container p{
+        display: none;
+    }
+    #information .in_1 .login_search .service{
+        display: none;
+    }
+    #information .in_1 .new{
+        padding: 10px;
+        margin-left: 10px;
+        height: auto;
+    }
+    #information .in_1 .time{
+        width: auto;
+    }
+}

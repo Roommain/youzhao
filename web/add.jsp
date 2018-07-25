@@ -29,17 +29,17 @@
 </div>
 <div id="add">
     <div class="container clearFix">
-        <form action="addrecruit" method="post">
+        <form action="addrecruit" method="post" name="form1" onsubmit="return checkForm()">
             <div class="Release">
                 <div class="pull-left add-left">
                     <ul>
                         <li>
                             <div>公司名称：</div>
-                            <div><input type="text" name="campanyName"></div>
+                            <div><input type="text" name="campanyName" value=""></div>
                         </li>
                         <li>
                             <div>职位福利：</div>
-                            <div><input type="text" name="treatment"></div>
+                            <div><input type="text" name="treatment" value=""></div>
                         </li>
                     </ul>
                     <div>职位描述：</div>
@@ -62,7 +62,7 @@
                         </li>
                         <li>
                             <div>联系方式：</div>
-                            <input type="tel" name="phone">
+                            <input type="tel" name="phone" id="phone">
                         </li>
                         <li>
                             <div>截至日期：</div>
@@ -88,5 +88,6 @@
 </div>
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/yanz.js"></script>
 </body>
 </html>

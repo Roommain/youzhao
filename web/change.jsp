@@ -2,6 +2,10 @@
 <%@ page import="java.sql.SQLException" %>
 <%@ page import="java.sql.DriverManager" %>
 <%@ page import="com.workweb.Jdbcconn" %>
+<%@ page import="com.workweb.RecruitDao" %>
+<%@ page import="com.workweb.Recruit" %>
+<%@ page import="java.util.List" %>
+<%@ page import="java.lang.String" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <jsp:useBean id="connection" scope="page" class="com.workweb.Jdbcconn" />
@@ -20,29 +24,11 @@
     <title>邮招聘信息发布平台</title>
 </head>
 <body>
-<%! ResultSet rs = null;%>
 <%
-    String id = request.getParameter("id");
-    String goodsql = "select * from CQUPT_RECRUIT where ID="+id;
-    rs = Jdbcconn.getInstance().executeQuery(goodsql);
-    if(rs.next()) {
-        String companyName = rs.getString("companyName");
-        String describe = rs.getString("describe");
-        String requirement = rs.getString("requirement");
-        String place = rs.getString("place");
-        String systemTime = rs.getString("systemTime");
-        String treatment = rs.getString("treatment");
-        String interviewDate = rs.getString("interviewDate");
-        String[] arr = interviewDate.split(" ");
-        String inter = arr[0];
-        String phone = rs.getString("phone");
-        String endDate = rs.getString("endDate");
-        String[] arr2 = interviewDate.split(" ");
-        String inter2 = arr[0];
-
-        String workplace = rs.getString("workplace");
-        String username = rs.getString("username");
-        String publisher = rs.getString("publisher");
+    String ID = request.getParameter("id");
+    try {
+        List<Recruit> list = RecruitDao.getInstance().selectById(ID);
+        for (Recruit e : list) {
 %>
 <div id="head">
     <div class="container clearFix">
@@ -59,45 +45,45 @@
                     <ul>
                         <li>
                             <div>公司名称：</div>
-                            <div><input type="text" name="campanyName" value="<%=companyName%>"></div>
+                            <div><input type="text" name="campanyName" value="<%=e.getCompanyName()%>"></div>
                         </li>
                         <li>
                             <div>职位福利：</div>
-                            <div><input type="text" name="treatment" value="<%=treatment%>"></div>
+                            <div><input type="text" name="treatment" value="<%=e.getTreatment()%>"></div>
                         </li>
                     </ul>
                     <div>职位描述：</div>
-                    <p><textarea cols="50" rows="6" style='resize:vertical;' name="describe"><%=describe%></textarea>
+                    <p><textarea cols="50" rows="6" style='resize:vertical;' name="describe"><%=e.getDescribe()%></textarea>
                     </p>
                     <div>任职要求：</div>
-                    <p><textarea cols="50" rows="6" style='resize:vertical;' name="requirement"><%=requirement%></textarea>
+                    <p><textarea cols="50" rows="6" style='resize:vertical;' name="requirement"><%=e.getRequirement()%></textarea>
                     </p>
                 </div>
                 <div class="pull-right add-right">
                     <ul>
                         <li>
                             <div>面试时间：</div>
-                            <input type="text" name="interviewDate" value="<%=inter%>">
+                            <input type="text" name="interviewDate" value="<%=e.getInter()%>">
                         </li>
                         <li>
                             <div>面试地点：</div>
-                            <input type="text" name="place" value="<%=place%>">
+                            <input type="text" name="place" value="<%=e.getPlace()%>">
                         </li>
                         <li>
                             <div>联系方式：</div>
-                            <input type="tel" name="phone" value="<%=phone%>">
+                            <input type="tel" name="phone" value="<%=e.getPhone()%>">
                         </li>
                         <li>
                             <div>截至日期：</div>
-                            <input type="text" name="endDate" value="<%=inter2%>">
+                            <input type="text" name="endDate" value="<%=e.getEndD()%>">
                         </li>
                         <li>
                             <div>工作地点：</div>
-                            <input type="text" name="workplace" value="<%=workplace%>">
+                            <input type="text" name="workplace" value="<%=e.getWorkplace()%>">
                         </li>
                         <li>
                             <div>职位发布者：</div>
-                            <input type="text" name="publisher" value="<%=publisher%>">
+                            <input type="text" name="publisher" value="<%=e.getPublisher()%>">
                         </li>
                     </ul>
                 </div>
@@ -108,6 +94,11 @@
         </form>
     </div>
 </div>
+<%
+    }
+} catch (SQLException e) {
+    e.printStackTrace();
+%>
 <%
     }
 %>

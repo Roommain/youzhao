@@ -29,7 +29,7 @@
 
                         <div class="login-other">
                             <div>
-                                <a href="#" id="resetPassword" style="color: #fc7256" >忘记密码</a>
+                                <a href="RetrievePassword.jsp" id="resetPassword" style="color: #fc7256" >忘记密码</a>
                             </div>
                             <div>
                                 <a href="register.jsp" id="register" style="color: #fc7256">注册</a>

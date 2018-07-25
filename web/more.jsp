@@ -21,6 +21,7 @@
     <link href="https://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/MoreInfomation.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/response.css">
     <title>更多信息</title>
 </head>
 <body>
@@ -96,5 +97,11 @@
     </div>
 </div>
 
+<script>
+    function on(id) {
+        if(confirm('确实要删除该内容吗?删除后不可恢复。'))
+        {location='delete.jsp?id=id'}
+    }
+</script>
 </body>
 </html>

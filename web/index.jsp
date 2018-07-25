@@ -19,6 +19,7 @@
   <link href="images/icon.png" rel="shortcut icon" />
   <link href="https://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/response.css">
   <title>邮招聘信息发布平台</title>
 </head>
 <body>
@@ -33,7 +34,7 @@
       </div>
       <div class="sign pull-right" id="hide"><a href="login.jsp" style="display: block">登陆/注册</a></div>
       <div class="sign pull-right" id="show" style="display: none"><a href="login.jsp"></a></div>
-      <div class="sign pull-right" id="cos" style="display: none"><a href="index.jsp">退出/注销</a></div>
+      <div class="sign pull-right" id="cos" style="display: none"><a href="index.jsp">注销</a></div>
     </div>
   </div>
 </div>
@@ -65,25 +66,24 @@
 </div>
 <div id="information">
   <div class="container">
-    <div class="in_1">
-      <div class="login_search">
-        <ul>
-          <li class="bg1">我是</li>
-          <li class="bg2"><a href="more.jsp">学生</a></li>
-          <li class="bg3"><a href="">老师</a></li>
-          <li class="bg4"><a href="add.jsp">老板</a></li>
-          <li class="bg5"><a href="">校友</a></li>
+    <div class="in_1 row">
+      <div class="col-md-4 col-sm-12">
+        <div class="login_search">
+          <ul>
+            <li class="bg2"><a href="more.jsp">学生</a></li>
+            <li class="bg3"><a href="">老师</a></li>
+            <li class="bg4"><a href="add.jsp">老板</a></li>
+          </ul>
+        </div>
+        <ul class="link">
+          <li class="link1"><a href="">新闻动态</a></li>
+          <li class="link2"><a href="">测试工具</a></li>
+          <li class="link3"><a href="">校招指南</a></li>
+          <li class="link4"><a href="">职场活动</a></li>
+          <li class="link5"><a href="">政策法规</a></li>
         </ul>
-        <div class="service">服务大厅</div>
       </div>
-      <ul class="link">
-        <li class="link1"><a href="">新闻动态</a></li>
-        <li class="link2"><a href="">测试工具</a></li>
-        <li class="link3"><a href="">校招指南</a></li>
-        <li class="link4"><a href="">职场活动</a></li>
-        <li class="link5"><a href="">政策法规</a></li>
-      </ul>
-      <div class="new">
+      <div class="new col-md-5 col-sm-12">
         <ul class="clearFix">
           <%
             try {
@@ -100,17 +100,19 @@
           <%
             }
           %>
+          <a class="pull-right" href="more.jsp">更多>></a>
         </ul>
-
-        <a class="pull-right" href="more.jsp">更多>></a>
       </div>
-      <div class="time">
-        <ul>
-          <li class="time1"><a href="more.jsp"><i></i>信息查看</a></li>
-          <li class="time2"><a href=""><i></i>我要求职</a></li>
-          <li class="time3"><a href="add.jsp"><i></i>我要招聘</a></li>
-          <li class="time4"><a href=""><i></i>在线咨询</a></li>
-        </ul>
+      <div class="time col-md-3 col-sm-12">
+        <div class="service">服务大厅</div>
+        <div class="clearFix">
+          <ul>
+            <li class="time1"><a href="more.jsp"><i></i>信息查看</a></li>
+            <li class="time2"><a href="Resume.jsp"><i></i>我要求职</a></li>
+            <li class="time3"><a href="add.jsp"><i></i>我要招聘</a></li>
+            <li class="time4"><a href=""><i></i>简历查询</a></li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
