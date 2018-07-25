@@ -1,0 +1,198 @@
+body{
+    margin: 0;
+    font-family: Tahoma, "\5B8B\4F53", Arial, Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    line-height: 20px;
+    color: #333333;
+    background-color: #fff;
+}
+h1,h2,h4,h5,h6{
+    margin: 10px 0;
+    font-family: inherit;
+    font-weight: bold;
+    line-height: 20px;
+    color: inherit;
+    text-rendering: optimizelegibility;
+}
+h3 {
+    display: block;
+    font-size: 1.17em;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font-weight: bold;
+}
+div{
+    display: block;
+}
+form{
+    margin:0 0 0;
+    display: block;
+}
+textarea, input.text, .simulation-text, input.disabled, textarea.disabled {
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+    -webkit-transition: border linear 0.2s, -webkit-box-shadow linear 0.2s;
+    transition: border linear 0.2s, -webkit-box-shadow linear 0.2s;
+    transition: border linear 0.2s, box-shadow linear 0.2s;
+    transition: border linear 0.2s, box-shadow linear 0.2s, -webkit-box-shadow linear 0.2s;
+}
+.container{
+    margin-right: auto;
+    margin-left: auto;
+}
+.wrap{
+    margin-right: auto;
+    margin-left: auto;
+    width: 980px;
+}
+.wrap:before .clearfix:after{
+    display: table;
+    line-height: 0;
+    content: "";
+}
+.user-info{
+    border: 1px solid #e6e6e6;
+    margin-top: 14px;
+    background-color: #fff;
+}
+.user-info .page-title{
+    background-color: #fafafa;
+    padding: 28px 40px;
+    position:relative;
+    margin-bottom: 20px;
+}
+.user-info .page-title h3{
+    margin: 0;
+    font-weight: normal;
+    line-height: normal;
+    font-size: 30px;
+}
+.user-info .page-title .tips-required{
+    color: #fff;
+    font-family: "Arial";
+    font-size: 12px;
+    line-height: 16px;
+    padding: 2px 4px;
+    background-color: #ff7f00;
+    margin-left: 8px;
+    position: relative;
+    top: -10px;
+}
+.user-info .work-exp{
+    margin-bottom: 40px;
+    margin-left: 40px;
+}
+.user-info .info-title{
+    font-size: 18px;
+    color:#454545;
+    line-height: normal;
+    margin: 0;
+    margin-bottom: 30px;
+    font-weight: normal;
+}
+.user-info .info-title span{
+    font-size: 14px;
+    color: #999;
+    margin-left: 10px;
+}
+.user-info .work-exp .work-exp-content{
+    margin-left: 24px;
+}
+dl{
+    margin: 0;
+}
+dl{
+    display: block;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+}
+.user-info .work-exp .work-exp-content dl dd{
+    margin-bottom: 28px;
+}
+dd{
+    margin-left: 0;
+}
+dd{
+    display: block;
+    -webkit-margin-start: 40px;
+}
+.user-info .work-exp .work-exp-content dl dd .module-small{
+    margin-right: 20px;
+}
+.user-info .work-exp .work-exp-content dl dd .width-large{
+    width: 350px;
+}
+input.input-xlarge{
+    height: 30px;
+    padding: 4px 8px;
+    font-size: 16px;
+    line-height: 30px;
+}
+.user-info .edu-exp{
+    margin-bottom: 30px;
+    padding-left: 40px;
+}
+.user-info .info-title{
+    font-size: 18px;
+    color: #454545;
+    line-height: normal;
+    margin: 0;
+    margin-bottom: 30px;
+    font-weight: normal;
+}
+.user-info .edu-exp .edu-exp-content dl dd{
+    margin-bottom: 28px;
+}
+.user-info .edu-exp .edu-exp-content{
+    margin-left: 24px;
+}
+.user-info .edu-exp .edu-exp-content dl dd input{
+    margin-right: 24px;
+}
+.user-info .edu-exp .edu-exp-content dl dd .selectui-large{
+    width: 235px;
+}
+.selectui-large{
+    font-size: 14px;
+}
+.user-info .work-exp  .work-exp-content dl dd .job-duty-details .text-content{
+    position: relative;
+}
+.user-info .work-exp .work-exp-content dl dd  .job-content{
+    height: 30px;
+    padding: 4px 8px;
+    font-size: 16px;
+    line-height: 30px;
+}
+.clearfix {
+    *zoom: 1;
+}
+.button_input{
+    display: inline-block;
+    padding: .3em .5em;
+    background-color: rgb(52,141,111);
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: .3em;
+    box-shadow: 0 1px white inset;
+    text-align: center;
+    text-shadow: 0 1px 1px black;
+    color:white;
+    font-weight: bold;
+    height: 30px;
+    width: 200px;
+}
+#input_select{
+    margin-right: 24px;
+    width: 210px;
+    height: 30px;
+    padding: 4px 8px;
+    font-size:16px;
+    line-height: 30px;
+}
