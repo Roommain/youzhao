@@ -38,7 +38,6 @@ public class RecruitDao {
         }
         return result;
     }
-
     private Recruit fromResultSet(ResultSet rs) throws SQLException {
         Recruit e = new Recruit();
         e.setId(rs.getInt("id"));
@@ -47,6 +46,10 @@ public class RecruitDao {
         e.setRequirement(rs.getString("requirement"));
         e.setPlace(rs.getString("place"));
         e.setSystemTime(rs.getString("systemTime"));
+        String[] arr1 = e.getSystemTime().split(" ");
+        e.setSystemTime(arr1[0]);
+
+
         e.setTreatment(rs.getString("treatment"));
 
         e.setInterviewDate(rs.getString("interviewDate"));

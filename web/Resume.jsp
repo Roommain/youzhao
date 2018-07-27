@@ -18,6 +18,7 @@
 <div class="wrap">
     <div class="user-info">
         <form action="resume" method="post" onsubmit="return checkForm()">
+            <input type="hidden" name="id" value="${param.id}">
             <section class="page-title clearfix">
                 <h3>
                     完善简历
@@ -39,7 +40,7 @@
                         <dd>
                             <span class="module-small">
                                 <input class="text input-xlarge width-large"
-                                       type="text" name="realname" placeholder="真实姓名">
+                                       type="text" name="realName" placeholder="真实姓名">
                             </span>
                             <span>
 
@@ -90,7 +91,7 @@
                         <dd>
                             <input type="text"  name="major" class="text input-xlarge width-large"
                                    placeholder="所属专业">
-                            <input type="date" name="enddate" class="text input-xlarge width-large"
+                            <input type="date" name="endDate" class="text input-xlarge width-large"
                                    style="width: 210px" placeholder="毕业年份">
                         </dd>
                     </dl>

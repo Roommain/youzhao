@@ -1,0 +1,34 @@
+#add .Release{
+    width: 100%;
+    height: 600px;
+}
+#add .add-left{
+    margin: 20px;
+    width: 500px;
+    height: 500px;
+}
+#add .add-right{
+    margin: 20px;
+    width: 500px;
+    height: 500px;
+}
+#add ul li{
+    width: 100%;
+    height: 80px;
+}
+#add ul li input{
+    width: 350px;
+    height: 40px;
+}
+#add .sub input{
+    margin: 20px;
+    position: relative;
+    top: -100px;
+    display: block;
+    width: 220px;
+    height: 45px;
+    background-color: #0caf92;
+}
+#add .Release ul li span{
+    color: red;
+}

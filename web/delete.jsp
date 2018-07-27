@@ -9,9 +9,11 @@
 <body bgcolor="#ffffff">
 
 <%
-    String sql="delete CQUPT_RECRUIT where ID="+request.getParameter("id");
-    boolean dele=connection.executeUpdata(sql);
-    if(dele)
+    String sql1="delete CQUPT_resume where recruitid="+request.getParameter("id");
+    boolean dele1=connection.executeUpdata(sql1);
+    String sql2="delete CQUPT_RECRUIT where ID="+request.getParameter("id");
+    boolean dele2=connection.executeUpdata(sql2);
+    if(dele1&dele2)
     {
 %>
 <script language="javascript">

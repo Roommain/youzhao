@@ -21,7 +21,7 @@ public class Resume extends HttpServlet {
         resp.setContentType("text/html; charset=UTF-8");
 
         PrintWriter out=resp.getWriter();
-        String realName=req.getParameter("realname");
+        String realName=req.getParameter("realName");
         String phone=req.getParameter("phone");
         String email=req.getParameter("email");
         String skill=req.getParameter("skill");
@@ -29,10 +29,12 @@ public class Resume extends HttpServlet {
         String maxEducation=req.getParameter("maxEducation");
         System.out.print(maxEducation);
         String major=req.getParameter("major");
-        String enddate=req.getParameter("enddate");
+        String enddate=req.getParameter("endDate");
         String project=req.getParameter("project");
         String award=req.getParameter("award");
         String compusExperise=req.getParameter("compusExperise");
+        String id = req.getParameter("id");
+        System.out.print("ggasjkdahdjh"+id);
         Cookie[] cookie=req.getCookies();
         String username=null;
         for(int i=0;i<cookie.length;i++){
@@ -57,12 +59,13 @@ public class Resume extends HttpServlet {
                     out.println("location.href='index.jsp'</script>");//等待替代网站
                 }else {
                     String sql = "insert into cqupt_resume values(recruit_id.nextval,'" + realName + "','" + phone + "','" + email + "','" + major + "'," +
-                            "'" + school + "','" + skill + "',to_date('" + enddate + "','yyyy-mm-dd'),'" + award + "','" + project + "','" + compusExperise + "',sysdate,'" + username + "','" + maxEducation + "')";
+                            "'" + school + "','" + skill + "',to_date('" + enddate + "','yyyy-mm-dd'),'" + award + "','" + project + "','" + compusExperise + "',sysdate,'" + username + "','" + maxEducation + "',"+id+")";
+                    //需要先获取招聘信息id
                     Boolean rs = Jdbcconn.getInstance().executeUpdata(sql);
 
                     if (rs) {
                         out.println("<script language = javascript>alert('个人信息提交成功');");
-                        out.println("location.href='index.jsp'</script>");//等待替代网站
+                        out.println("location.href='more_person.jsp'</script>");//等待替代网站
                     } else {
                         out.println("<script language = javascript>alert('个人信息提交失败，请重新填写');");
                         out.println("location.href='Resume.jsp'</script>");

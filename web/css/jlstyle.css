@@ -1,0 +1,80 @@
+#resume{
+    margin: 20px auto;
+    width: 820px;
+    height: 900px;
+    border: 16px solid #EBEBEB;
+}
+#resume .res_name{
+    margin: 10px auto;
+    width: 720px;
+    height: 180px;
+    border-bottom: 4px solid #EBEBEB;
+}
+#resume .res_name .name_1{
+    margin-top:50px;
+    width: 570px;
+}
+#resume .res_name .name_1 p{
+    font-size: 34px;
+}
+#resume .education{
+    margin: 10px auto;
+    width: 720px;
+    height: 100px;
+    border-bottom: 4px solid #EBEBEB;
+}
+#resume .education .edu{
+    width: 120px;
+    height: 40px;
+    background-color: #0caf92;
+    color: white;
+    font-size: 20px;
+    line-height: 40px;
+    text-align: center;
+    position: relative;
+    top: -10px;
+}
+#resume .education .edu_2{
+    width: 570px;
+}
+#resume .education .edu_2 table tr td{
+    width: 150px;
+    height: 40px;
+    margin-top: 10px;
+    font-size: 16px;
+    line-height: 40px;
+}
+
+#resume .res_project,#resume .res_reward{
+    margin: 10px auto;
+    width: 720px;
+    height: 180px;
+    border-bottom: 4px solid #EBEBEB;
+}
+#resume .res_campus{
+    margin: 10px auto;
+    width: 720px;
+    height: 180px;
+}
+#resume .res_project .pro_1,#resume .res_reward .rew_1,#resume .res_campus .cam_1{
+    width: 120px;
+    height: 40px;
+    background-color: #0caf92;
+    color: white;
+    font-size: 20px;
+    line-height: 40px;
+    text-align: center;
+    position: relative;
+    top: -10px;
+}
+#resume .res_project .pro_2,#resume .res_reward .rew_2,#resume .res_campus .cam_2{
+    width: 570px;
+}
+
+
+
+
+
+
+
+
