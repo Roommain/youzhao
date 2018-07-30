@@ -53,8 +53,11 @@ public class Addrecruit extends HttpServlet{
                 String url = "jdbc:oracle:thin:@127.0.0.1:1521/orcl";
                 Connection conn = DriverManager.getConnection(url, "system", "123456");
                 Statement st = conn.createStatement();
+
+
                 String update="insert into cqupt_recruit values(recruit_id.nextval，'"+campanyname+"','"+treatment+"','"+describe+"','"+requirement+
                         "',to_date('"+interviewdate+"','yyyy-mm-dd'),'"+place+"','"+phone+ "',to_date('"+enddate+"','yyyy-mm-dd'),'"+workplace+"','"+username+"','"+publisher+"',sysdate)";
+
 
                 System.out.print(update);
                 int rs= st.executeUpdate(update);
